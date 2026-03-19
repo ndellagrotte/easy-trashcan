@@ -1,0 +1,17 @@
+{
+  "display": {
+    "title": "Trash can",
+    "description": "",
+    "icon": {
+      "id": "minecraft:cobblestone"
+    },
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "parent": "global:macro21kgb",
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
