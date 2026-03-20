@@ -10,12 +10,34 @@ base {
 	archivesName = project.archives_base_name
 }
 
+loom {
+	runs {
+		datagen {
+			server()
+			name = "Data Generation"
+			runDir = "build/datagen"
+			vmArg("-Dfabric-api.datagen")
+			vmArg("-Dfabric-api.datagen.modid=easytrashcan")
+			vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
+		}
+	}
+	accessWidenerPath = file("src/main/resources/easytrashcan.accesswidener")
+}
+
 repositories {
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven { url 'https://maven.nucleoid.xyz/releases/' }
+	maven { url 'https://kneelawk.com/maven' }
+	maven { url "https://maven.alexiil.uk/" }
+	maven { url "https://api.modrinth.com/maven/" }
+	maven { url = "https://jitpack.io" }
+	maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+
+	mavenLocal()
 }
 
 dependencies {
@@ -26,6 +48,29 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	modImplementation 'eu.pb4:polymer-core:0.15.1+1.21.11'
+	modImplementation 'eu.pb4:polymer-blocks:0.15.1+1.21.11'
+	modImplementation 'eu.pb4:polymer-resource-pack:0.15.1+1.21.11'
+	modImplementation 'eu.pb4:polymer-resource-pack-extras:0.15.1+1.21.11'
+	modImplementation 'eu.pb4:polymer-autohost:0.15.1+1.21.11'
+	modImplementation 'eu.pb4:polymer-virtual-entity:0.15.1+1.21.11'
+	modImplementation include('eu.pb4:common-protection-api:1.0.0')
+	modImplementation include('eu.pb4:sgui:1.12.0+1.21.11')
+	modImplementation include('eu.pb4:map-canvas-api:0.7.0+1.21.11')
+	modImplementation include('eu.pb4:factorytools:0.9.3+1.21.11')
+	modImplementation include('nl.theepicblock:resource-locator-api:0.6.3-drex+1.21.11')
+
+	// Temp hack to allow development
+	//modImplementation include('com.kneelawk:graphlib:1.99.99+1.20.local')
+	//modImplementation include('alexiil.mc.lib:libnetworkstack-base:0.11.0-aaa.patbox')
+
+	modCompileOnly 'maven.modrinth:polydex:1.3.0+1.21.2'
+
+	// Uncomment the following line to enable the deprecated Fabric API modules.
+	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
+
+	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 	
 }
 
