@@ -1,0 +1,35 @@
+{
+	"required": true,
+	"package": "denizen.easytrashcan.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"BlockItemMixin",
+		"BlockMixin",
+		"BuiltinRegistriesMixin",
+		"CeilingHangingSignBlockMixin",
+		"FaceAttachedHorizontalDirectionalBlockMixin",
+		"FlowerPotBlockAccessor",
+		"FolderRepositorySourceAccessor",
+		"ItemContainerContentsMixin",
+		"LanguageAccessor",
+		"LanternBlockMixin",
+		"LeadItemMixin",
+		"LivingEntityAccessor",
+		"LivingEntityMixin",
+		"PackRepositoryMixin",
+		"PropertiesAccessor",
+		"ServerPlayerMixin",
+		"ShulkerBoxBlockEntityMixin",
+		"SignBlockEntityMixin",
+		"TagValueInputAccessor",
+		"datafixer.ItemStackComponentizationFixMixin",
+		"datafixer.V100Accessor",
+		"datafixer.V1460Mixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

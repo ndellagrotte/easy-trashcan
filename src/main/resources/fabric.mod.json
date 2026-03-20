@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "easytrashcan",
+	"version": "${version}",
+	"name": "EasyTrashcan",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/easytrashcan/textures/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"denizen.easytrashcan.ModInit"
+		]
+	},
+	"mixins": [
+		"easytrashcan.mixins.json"
+	],
+	"accessWidener": "easytrashcan.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"polymer-core": ">=0.7.5",
+		"polymer-resource-pack": ">=0.7.5",
+		"polymer-virtual-entity": ">=0.7.5"
+	}
+}
