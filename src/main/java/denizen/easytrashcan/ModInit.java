@@ -1,10 +1,6 @@
 package denizen.easytrashcan;
 
 
-import denizen.easytrashcan.block.furniture.BrazierBlock;
-import denizen.easytrashcan.block.item.GlobeBlock;
-import denizen.easytrashcan.block.extension.WallAttachedLanternBlock;
-import denizen.easytrashcan.entity.DecorationsEntities;
 import denizen.easytrashcan.model.DecorationsModels;
 import denizen.easytrashcan.patch.DecorationsLootTablePatches;
 import denizen.easytrashcan.polydex.PolydexCompat;
@@ -16,12 +12,10 @@ import denizen.easytrashcan.util.*;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import denizen.easytrashcan.block.DecorationsBlockEntities;
 import denizen.easytrashcan.block.DecorationsBlocks;
-import denizen.easytrashcan.item.DecorationsItems;
 import eu.pb4.polymer.resourcepack.extras.api.ResourcePackExtras;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.Identifier;
-import org.apache.logging.log4j.core.config.AppenderControlArraySet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,8 +49,6 @@ public class ModInit implements ModInitializer {
 		DecorationsBlocks.register();
 		DecorationsBlockEntities.register();
 		DecorationsModels.register();
-		DecorationsItems.register();
-		DecorationsEntities.register();
 		DecorationsRecipeTypes.register();
 		DecorationsRecipeSerializers.register();
 		DecorationsUtil.register();
